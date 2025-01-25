@@ -1,0 +1,382 @@
+/* Allgemeine Stile */
+body {
+  font-family: 'Trebuchet MS', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: white;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #1a75ff, #b903f0);
+  position: relative;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Interaktionen mit darunterliegenden Elementen zulassen */
+  z-index: -1; /* Sicherstellen, dass Canvas über dem Body-Hintergrund liegt */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.5);
+  transition: background 0.3s;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+.logo {
+  flex: 1;
+}
+
+.logo img {
+  height: 50px;
+}
+
+/* Flex-Container für Logo und Headline */
+.logo-container {
+  display: flex;
+  align-items: center; /* Vertikal zentrieren */
+  gap: 1rem; /* Abstand zwischen Logo und Headline */
+}
+
+/* Headline-Styling */
+.logo-headline {
+  font-family: "Orbitron", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 2rem;
+  background: linear-gradient(to bottom, #33ffdd, #d762ee); /* Farbverlauf */
+  background-clip: text; /* Standard property for compatibility */
+  -webkit-background-clip: text; /* Clip auf Text begrenzen */
+  -webkit-text-fill-color: transparent; /* Hintergrundfarbe durchlässig */
+  margin: 0;
+  padding-left: 1rem; /* Abstand zwischen Logo und Text */
+  white-space: nowrap; /* Kein Zeilenumbruch */
+  text-transform: uppercase; /* Großbuchstaben */
+  /*text-shadow: 0.2px rgb(255, 254, 254);*/
+}
+
+
+.nav {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1rem;
+}
+
+.nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #00bcd4;
+}
+
+.wallet-connect {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.wallet-connect a {
+  background-color: #00bcd4;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border: 2px solid white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Dezenter Box-Schatten */
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.wallet-connect a:hover {
+  background-color: #057d8d;
+}
+
+main {
+  margin-top: 100px;
+  text-align: center;
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #b903f0;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Dezenter Box-Schatten */
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #650e80;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.feature {
+  background: #0466fa;
+  padding: 1.5rem;
+  border-radius: 50px 0 50px 0;
+  flex: 1;
+  border: 2px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Dezenter Box-Schatten */
+  transition: transform 0.3s, box-shadow 0.3s; /* Für Hover-Effekte */
+}
+
+.feature:hover {
+  transform: translateY(-5px); /* Leichtes Anheben bei Hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Intensiverer Schatten bei Hover */
+}
+
+.right-text {
+  text-align: right;
+}
+
+.justify-text {
+  text-align: justify;
+  /*font-weight: bold;*/
+}
+
+/* Logos Section */
+.logos-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+  /*background: linear-gradient(to bottom, #1e3a5f, #141e30);*/
+  color: white;
+  text-align: center;
+}
+
+.coin-logo img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  /*border: 2px solid #ffffff;*/
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s;
+}
+
+.coin-logo img:hover {
+  transform: scale(1.1);
+}
+
+.blockchain-logos {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.blockchain-logos img {
+  width: 80px;
+  height: auto;
+  transition: transform 0.3s, filter 0.3s;
+  filter: grayscale(80%);
+}
+
+.blockchain-logos img:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+/* Footer Section */
+footer {
+  background: #1e2a38;
+  color: white;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.footer-section {
+  flex: 1;
+  margin: 0 1rem;
+  min-width: 250px;
+}
+
+.footer-section h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #b903f0;
+}
+
+.footer-section p,
+.footer-section ul {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin: 0.5rem 0;
+}
+
+.footer-section a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #b903f0;
+}
+
+.footer-section img {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.footer-logo img {
+  width: 120px;
+  height: auto;
+  margin-left: 1.4rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+      font-size: 2rem;
+  }
+
+  .features {
+      flex-direction: column;
+      margin: 1rem;
+  }
+
+  .feature {
+      margin-bottom: 1rem;
+  }
+
+  .cta-button {
+      font-size: 1rem;
+  }
+
+  nav {
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+      padding: 0.5rem 1rem;
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .logo img {
+      height: 40px;
+      margin-bottom: 0.5rem;
+  }
+
+  nav {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  nav a {
+      margin-bottom: 0.5rem;
+  }
+
+  .wallet-connect {
+      margin-top: 0.5rem;
+  }
+
+  h1 {
+      font-size: 1.8rem;
+  }
+
+  .cta-button {
+      font-size: 0.9rem;
+      padding: 0.6rem 1.2rem;
+  }
+
+  p {
+      font-size: 0.9rem;
+  }
+
+  .features {
+      gap: 0.5rem;
+  }
+
+  nav a {
+      font-size: 0.9rem;
+  }
+}
